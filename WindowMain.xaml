@@ -1,0 +1,125 @@
+﻿<Window x:Name="Classroom" x:Class="ClassroomAlligators.WindowMain" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:ClassroomAlligators"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        mc:Ignorable="d" Title="Classroom Alligators" Height="1080" Width="1920" Background="Transparent" AllowsTransparency="True"
+        WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" AllowDrop="False"
+        Loaded="Classroom_Loaded" MouseLeftButtonDown="Classroom_MouseLeftButtonDown">
+    <Window.Resources>
+        <SolidColorBrush Color="#F5F5F5" x:Key="Color01"/>
+        <SolidColorBrush Color="#5E3FC6" x:Key="Color02"/>
+        <SolidColorBrush Color="#000000" x:Key="Color03"/>
+        <Style TargetType="Button" BasedOn="{StaticResource ButtonPrimary}" x:Key="StyleButton">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Roboto"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10 0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="TabIndex" Value="0"/>
+            <Setter Property="IsTabStop" Value="False"/>
+        </Style>
+        <Style TargetType="Label" BasedOn="{StaticResource LabelPrimary}" x:Key="StyleLabel">
+            <Setter Property="Height" Value="65"/>
+            <Setter Property="Width" Value="135"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontFamily" Value="Roboto"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="IsHitTestVisible" Value="False"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="StylePanel">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="GridMain">
+        <Rectangle x:Name="RectangleMain" Fill="{StaticResource Color01}" RadiusX="20" RadiusY="20"/>
+        <Label x:Name="RegionDoor" Content="--" Height="80" Width="20" Margin="40 130 0 0" Style="{StaticResource StyleLabel}"/>
+        <Label x:Name="RegionWhiteboard" Content="Front" Height="30" Width="1100" Margin="410 40 0 0" Style="{StaticResource StyleLabel}"/>
+        <Label x:Name="RegionLecturer" Content="Lecturer" Margin="1550 130 0 0" Style="{StaticResource StyleLabel}"/>
+        <StackPanel x:Name="PanelRow01" Style="{StaticResource StylePanel}" Margin="30 300 0 0">
+            <Label x:Name="Desk01" Content="01" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk02" Content="02" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk03" Content="03" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk04" Content="04" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk05" Content="05" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk06" Content="06" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk07" Content="07" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk08" Content="08" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk09" Content="09" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk10" Content="10" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk11" Content="11" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk12" Content="12" Style="{StaticResource StyleLabel}"/>
+        </StackPanel>
+        <StackPanel x:Name="PanelRow02" Style="{StaticResource StylePanel}" Margin="30 420 0 0">
+            <Label x:Name="Desk13" Content="13" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk14" Content="14" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk15" Content="15" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk16" Content="16" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk17" Content="17" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk18" Content="18" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk19" Content="19" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk20" Content="20" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk21" Content="21" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk22" Content="22" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk23" Content="23" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk24" Content="24" Style="{StaticResource StyleLabel}"/>
+        </StackPanel>
+        <StackPanel x:Name="PanelRow03" Style="{StaticResource StylePanel}" Margin="805 540 0 0">
+            <Label x:Name="Desk25" Content="25" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk26" Content="26" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk27" Content="27" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk28" Content="28" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk29" Content="29" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk30" Content="30" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk31" Content="31" Style="{StaticResource StyleLabel}"/>
+        </StackPanel>
+        <StackPanel x:Name="PanelRow04" Style="{StaticResource StylePanel}" Margin="805 660 0 0">
+            <Label x:Name="Desk32" Content="32" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk33" Content="33" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk34" Content="34" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk35" Content="35" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk36" Content="36" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk37" Content="37" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk38" Content="38" Style="{StaticResource StyleLabel}"/>
+        </StackPanel>
+        <StackPanel x:Name="PanelRow05" Style="{StaticResource StylePanel}" Margin="805 780 0 0">
+            <Label x:Name="Desk39" Content="39" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk40" Content="40" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk41" Content="41" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk42" Content="42" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk43" Content="43" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk44" Content="44" Style="{StaticResource StyleLabel}"/>
+            <Label x:Name="Desk45" Content="45" Style="{StaticResource StyleLabel}"/>
+        </StackPanel>
+        <Label x:Name="RegionGamingArea" Content="Gaming Area" Height="305" Width="755" Margin="40 550 0 0" Style="{StaticResource StyleLabel}"/>
+        <Label x:Name="RegionNetworkConnection" Content="CHECKING FOR INTERNET CONNECTION" Width="830" FontWeight="Bold" Margin="0 850 0 0" Style="{StaticResource LabelWarning}"/>
+        <StackPanel x:Name="PanelClassroomButton" Style="{StaticResource StylePanel}" Margin="535 990 0 0">
+            <Button x:Name="ClassroomButtonEvent" Content="EVENT" Style="{StaticResource StyleButton}" Click="ClassroomButtonEvent_Click"/>
+            <Button x:Name="ClassroomButtonGroup" Content="GROUP" Style="{StaticResource StyleButton}" Click="ClassroomButtonGroup_Click"/>
+            <Button x:Name="ClassroomButtonReset" Content="RESET" Style="{StaticResource StyleButton}" Click="ClassroomButtonReset_Click"/>
+            <Button x:Name="ClassroomButtonRandom" Content="RANDOM" Style="{StaticResource StyleButton}" Click="ClassroomButtonRandom_Click"/>
+            <Button x:Name="ClassroomButtonExit" Content="EXIT" Style="{StaticResource StyleButton}" Click="ClassroomButtonExit_Click"/>
+        </StackPanel>
+        <Grid x:Name="GridEvents" Opacity="0" Visibility="Hidden">
+            <Rectangle x:Name="RectangleDarken" Fill="{StaticResource Color03}" RadiusX="20" RadiusY="20" Opacity="0.6"/>
+            <Rectangle x:Name="RectangleEvents" Fill="{StaticResource Color01}" RadiusX="20" RadiusY="20" Height="720" Width="1280"/>
+            <StackPanel x:Name="PanelEvents" Orientation="Vertical" Margin="370 230">
+                <!--s-->
+            </StackPanel>
+            <Button x:Name="ButtonEventsClose" Content="RETURN" Margin="0 620 0 0" Style="{StaticResource StyleButton}" Click="ButtonEventsClose_Click"/>
+        </Grid>
+    </Grid>
+</Window>
