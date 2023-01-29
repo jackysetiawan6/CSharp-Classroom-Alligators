@@ -85,11 +85,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\ClassroomAlligators\\ClassroomAlligators.csproj",
+      "projectUniqueName": "C:\\Users\\jacky\\Source\\Repos\\jackysetiawan6\\ClassroomAlligators\\ClassroomAlligators.csproj",
       "projectName": "ClassroomAlligators",
-      "projectPath": "D:\\Programming\\ClassroomAlligators\\ClassroomAlligators.csproj",
+      "projectPath": "C:\\Users\\jacky\\Source\\Repos\\jackysetiawan6\\ClassroomAlligators\\ClassroomAlligators.csproj",
       "packagesPath": "C:\\Users\\jacky\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\ClassroomAlligators\\obj\\",
+      "outputPath": "C:\\Users\\jacky\\Source\\Repos\\jackysetiawan6\\ClassroomAlligators\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

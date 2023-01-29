@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,7 +20,7 @@ namespace ClassroomAlligators
         private void Classroom_Loaded(object s, RoutedEventArgs e)
         {
             WindowState = WindowState.Maximized; ClassroomButtonEvent.IsEnabled = false;
-            //NetworkConnection();
+            NetworkConnection();
         }
         private void Classroom_MouseLeftButtonDown(object s, MouseButtonEventArgs e) { DragMove(); }
         private void ClassroomButtonExit_Click(object s, RoutedEventArgs e) { Close(); }
@@ -116,39 +116,36 @@ namespace ClassroomAlligators
                 Dispatcher.Invoke(() => { GridEvents.Visibility = Visibility.Hidden; });
             });
         }
-        //private void NetworkConnection()
-        //{
-        //    _ = Task.Run(() =>
-        //    {
-        //        while (true)
-        //        {
-        //            Task.Delay(2000).Wait();
-        //            try
-        //            {
-        //                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.gstatic.com/generate_204");
-        //                request.KeepAlive = false;
-        //                request.Timeout = 1000;
-        //                using HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-        //                NetworkCollection networks = NetworkListManager.GetNetworks(NetworkConnectivityLevels.Connected);
-        //                Dispatcher.Invoke(() =>
-        //                {
-        //                    ClassroomButtonEvent.IsEnabled = true;
-        //                    RegionNetworkConnection.Style = (Style)FindResource("LabelSuccess");
-        //                    RegionNetworkConnection.Content = "Connected to " + networks.FirstOrDefault().Name;
-        //                });
-        //            }
-        //            catch
-        //            {
-        //                Dispatcher.Invoke(() =>
-        //                {
-        //                    ClassroomButtonEvent.IsEnabled = false;
-        //                    RegionNetworkConnection.Style = (Style)FindResource("LabelDanger");
-        //                    RegionNetworkConnection.Content = "No internet connection. Please check your network!";
-        //                });
-        //            }
-        //        }
-        //    });
-        //}
+        private void NetworkConnection()
+        {
+            _ = Task.Run(() =>
+            {
+                while (true)
+                {
+                    Task.Delay(2000).Wait();
+                    List<NetworkInterface> networks = NetworkInterface.GetAllNetworkInterfaces().Where(x => x.OperationalStatus == OperationalStatus.Up).ToList();
+                    if (networks.Count > 0)
+                    {
+                        Dispatcher.Invoke(() =>
+                        {
+                            ClassroomButtonEvent.IsEnabled = true;
+                            RegionNetworkConnection.Style = (Style)FindResource("LabelSuccess");
+                            string ssid = "BLI Sentul";
+                            RegionNetworkConnection.Content = $"Connected to {ssid}";
+                        });
+                    }
+                    else
+                    {
+                        Dispatcher.Invoke(() =>
+                        {
+                            ClassroomButtonEvent.IsEnabled = false;
+                            RegionNetworkConnection.Style = (Style)FindResource("LabelDanger");
+                            RegionNetworkConnection.Content = "No internet connection. Please check your network!";
+                        });
+                    }
+                }
+            });
+        }
         private static void ReadDatabase()
         {
             _ = Task.Run(() =>
